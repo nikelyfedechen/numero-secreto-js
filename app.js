@@ -11,7 +11,7 @@ let numSecreto = parseInt(Math.random() * numeroMaximo + 1)
 
 const inputNumeroSecretoValue = document.getElementById('input-numero-secreto')
 
-document.getElementById('btn-descobrir-numero').addEventListener('click', function() {
+function validaNumeroSecreto() {
     if(inputNumeroSecretoValue.value == numSecreto) {
         containerInicio.style.display = 'none';
         containerAcerto.style.display = 'block';
@@ -19,16 +19,21 @@ document.getElementById('btn-descobrir-numero').addEventListener('click', functi
         containerErro.style.display = 'block'
         containerInicio.style.display = 'none';
     }
-})
+}
+
+function retornaParaInicio() {
+    containerInicio.style.display = 'block';
+    inputNumeroSecretoValue.value = '';
+}
+
+document.getElementById('btn-descobrir-numero').addEventListener('click', validaNumeroSecreto)
 
 document.getElementById('btn-tentar-novamente').addEventListener('click', function() {
     containerErro.style.display = 'none';
-    inputNumeroSecretoValue.value = '';
-    containerInicio.style.display = 'block';
+    retornaParaInicio();
 })
 
 document.getElementById('btn-jogar-novamente').addEventListener('click', function() {
     containerAcerto.style.display = 'none';
-    inputNumeroSecretoValue.value = '';
-    containerInicio.style.display = 'block';
+    retornaParaInicio();
 })
