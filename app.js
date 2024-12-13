@@ -7,12 +7,12 @@ const containerAcerto = document.querySelector('.container__conteudo-acertou');
 containerAcerto.style.display = 'none';
 
 const numeroMaximo = 500;
-let numSecreto = parseInt(Math.random() * numeroMaximo + 1)
+let numeroSecreto = parseInt(Math.random() * numeroMaximo + 1)
 
 const inputNumeroSecretoValue = document.getElementById('input-numero-secreto')
 
 function validaNumeroSecreto() {
-    if(inputNumeroSecretoValue.value == numSecreto) {
+    if(inputNumeroSecretoValue.value == numeroSecreto) {
         containerInicio.style.display = 'none';
         containerAcerto.style.display = 'block';
     } else {
