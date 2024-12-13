@@ -91,13 +91,12 @@ h1, h2 {
     font-size: 4rem;
 }
 
-h3,
 p,
 button {
     font-family: 'Inter', sans-serif;
 }
 
-h3 {
+p {
     font-size: 32px;
     font-weight: 400;
 }
