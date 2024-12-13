@@ -11,13 +11,24 @@ let numeroSecreto = parseInt(Math.random() * numeroMaximo + 1)
 
 const inputNumeroSecretoValue = document.getElementById('input-numero-secreto')
 
+function mensagemDicaNumeroSecreto() {
+    const mensagemDica = document.getElementById('dica-numero-secreto');
+
+    if(inputNumeroSecretoValue.value > numeroSecreto) {
+        mensagemDica.innerHTML = 'O número secreto é menor.';
+    } else {
+        mensagemDica.innerHTML = 'O número secreto é maior.';
+    }
+}
+
 function validaNumeroSecreto() {
     if(inputNumeroSecretoValue.value == numeroSecreto) {
         containerInicio.style.display = 'none';
         containerAcerto.style.display = 'block';
     } else {
-        containerErro.style.display = 'block'
         containerInicio.style.display = 'none';
+        containerErro.style.display = 'block'
+        mensagemDicaNumeroSecreto()
     }
 }
 
