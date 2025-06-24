@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <a href="https://nikelyfedechen.github.io/numero-secreto-js/">🎮 Clique aqui para jogar agora!</a>
+  <a href="https://nikelyfedechen.github.io/numero-secreto-js/" target="_blank">🎮 Clique aqui para jogar agora!</a>
 </p>
 
 <h2 id="tech">✨ Tecnologias Utilizadas</h2>
