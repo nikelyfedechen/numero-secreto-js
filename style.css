@@ -86,17 +86,20 @@ body::before {
     border-radius: 16px;
 }
 
-h1, h2 {
+h1,
+h2 {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 4rem;
 }
 
 p,
+label,
 button {
     font-family: 'Inter', sans-serif;
 }
 
-p {
+p,
+label {
     font-size: 32px;
     font-weight: 400;
 }

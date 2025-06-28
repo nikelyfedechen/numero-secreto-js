@@ -7,44 +7,54 @@ const containerAcerto = document.querySelector('.container__conteudo-acertou');
 containerAcerto.style.display = 'none';
 
 const numeroMaximo = 500;
-let numeroSecreto = parseInt(Math.random() * numeroMaximo + 1)
+let numeroSecreto = parseInt(Math.random() * numeroMaximo + 1);
 
-const inputNumeroSecretoValue = document.getElementById('input-numero-secreto')
+const inputNumeroSecretoValue = document.getElementById('input-numero-secreto');
 
 function mensagemDicaNumeroSecreto() {
-    const mensagemDica = document.getElementById('dica-numero-secreto');
+  const mensagemDica = document.getElementById('dica-numero-secreto');
 
-    if(inputNumeroSecretoValue.value > numeroSecreto) {
-        mensagemDica.innerHTML = 'O número secreto é menor.';
-    } else {
-        mensagemDica.innerHTML = 'O número secreto é maior.';
-    }
+  if (inputNumeroSecretoValue.value > numeroSecreto) {
+    mensagemDica.innerHTML = 'O número secreto é menor.';
+  } else {
+    mensagemDica.innerHTML = 'O número secreto é maior.';
+  }
 }
 
 function validaNumeroSecreto() {
-    if(inputNumeroSecretoValue.value == numeroSecreto) {
-        containerInicio.style.display = 'none';
-        containerAcerto.style.display = 'block';
-    } else {
-        containerInicio.style.display = 'none';
-        containerErro.style.display = 'block'
-        mensagemDicaNumeroSecreto()
-    }
+  if (inputNumeroSecretoValue.value == numeroSecreto) {
+    containerInicio.style.display = 'none';
+    containerAcerto.style.display = 'block';
+  } else {
+    containerInicio.style.display = 'none';
+    containerErro.style.display = 'block';
+    mensagemDicaNumeroSecreto();
+  }
 }
 
 function retornaParaInicio() {
-    containerInicio.style.display = 'block';
-    inputNumeroSecretoValue.value = '';
+  containerInicio.style.display = 'block';
+  inputNumeroSecretoValue.value = '';
 }
 
-document.getElementById('btn-descobrir-numero').addEventListener('click', validaNumeroSecreto)
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.querySelector('form');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    validaNumeroSecreto();
+  });
+});
 
-document.getElementById('btn-tentar-novamente').addEventListener('click', function() {
+document
+  .getElementById('btn-tentar-novamente')
+  .addEventListener('click', function () {
     containerErro.style.display = 'none';
     retornaParaInicio();
-})
+  });
 
-document.getElementById('btn-jogar-novamente').addEventListener('click', function() {
+document
+  .getElementById('btn-jogar-novamente')
+  .addEventListener('click', function () {
     containerAcerto.style.display = 'none';
     retornaParaInicio();
-})
+  });
